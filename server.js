@@ -12,5 +12,5 @@ res.sendFile(__dirname + '/static/index.html');
 });
 
 http.listen(port, function(){
-  console.log('listening on *:'+port);
+  console.log('Listening on port:'+port);
 });
