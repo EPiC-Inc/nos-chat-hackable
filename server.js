@@ -9,6 +9,8 @@ if (process.argv[2] == undefined) {
   var port = process.argv[2]; // Use node server.js <port>
 }
 
+// Routing
+app.use('/static', express.static(__dirname + '/static'));
 app.get('/', function(req, res){
 res.sendFile(__dirname + '/static/index.html');
 });
