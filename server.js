@@ -11,6 +11,10 @@ app.get('/', function(req, res){
 res.sendFile(__dirname + '/static/index.html');
 });
 
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
 http.listen(port, function(){
   console.log('Listening on port:'+port);
 });
