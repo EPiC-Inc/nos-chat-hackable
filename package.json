@@ -1,0 +1,24 @@
+{
+  "name": "nos-chat",
+  "version": "0.0.1",
+  "description": "A web-based chat client",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EPiC-Inc/nos-chat.git"
+  },
+  "author": "M",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EPiC-Inc/nos-chat/issues"
+  },
+  "homepage": "https://github.com/EPiC-Inc/nos-chat#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.0.4"
+  }
+}
