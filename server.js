@@ -1,5 +1,6 @@
 var app = require('express')();
 var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 if (process.argv[2] == undefined) {
   var port = 80;
