@@ -8,7 +8,7 @@ if (process.argv[2] == undefined) {
 }
 
 app.get('/', function(req, res){
-res.sendFile(__dirname + '/index.html');
+res.sendFile(__dirname + '/static/index.html');
 });
 
 http.listen(port, function(){
