@@ -79,6 +79,7 @@ if (cuser !== '') {
 // Callbacks
 key.oninput = function(event) {
     if (key.value == passwd) {
+        uName = user.value;
         document.cookie='key='+passwd;
         document.cookie='user='+uName;
         key.value = '';
