@@ -23,13 +23,21 @@ form button {
   display: block;
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
   background-color: #33ccff; /* blue background with no opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
+  text-align: center;
+}
+
+.overlay div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
