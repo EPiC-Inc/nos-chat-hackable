@@ -21,6 +21,10 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });
+  socket.on('switch', function(data){
+    console.log('user switched');
+    socket.join(data);
+  });
 });
 
 http.listen(port, function(){
