@@ -33,7 +33,7 @@ function connect() {
 
 function sendMsg() {
     if (room !== undefined) {
-        socket.emit('message', {'room':room, 'data':'['+uName+'] :'+m.value});
+        socket.emit('message', {'room':room, 'data':[uName, m.value});
         m.value=''; // Reset chat bar
     }
 }
@@ -97,7 +97,7 @@ key.oninput = function(event) {
 
 socket.on('message', function(data){
     var message = document.createElement('li');
-    message.innerHTML = data;
+    message.innerHTML = '['+data[0]+'] : '+data[1];
     messages.appendChild(message);
     $("ul").scrollTop($("ul").children().height());
 });
