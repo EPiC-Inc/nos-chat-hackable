@@ -7,7 +7,7 @@ function getUrlVars() {
 }
 
 room = getUrlVars()['room']
-console.log(rooms);
+console.log(room);
 
 if (room !== undefined) {
     var socket = io.of('/'+room);
