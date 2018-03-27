@@ -1,11 +1,14 @@
 // Vars
 var socket = io();
 var key = document.getElementById("passkey"); // Passkey input
+var user = document.getElementById("user"); // User input
 var keyPage = document.getElementById("keyPage"); // Div holding the key elements
 var m = document.getElementById("m"); // Message input
 var sendMsgBtn = document.getElementById("sendMsg");
 var passwd = 'ocelot';
 var room = getUrlVars()['room'];
+
+var uName = '';
 
 // Functions
 function getUrlVars() {
@@ -19,7 +22,7 @@ function getUrlVars() {
 function connect() {
     if (room !== undefined) {
         socket.emit('switch', room);
-        console.log('connection established');
+        console.log('connection established - '+uName);
         sendMsgBtn.disabled = false;
     }
 }
@@ -63,17 +66,33 @@ if (ckey == passwd) {
     keyPage.style.visibility = 'hidden';
     connect();
 }
+var cuser=getCookie("user");
+if (cuser !== '') {
+    //alert("Welcome back");
+    //key.value = '';
+    //key.disabled = true;
+    //keyPage.style.visibility = 'hidden';
+    //connect();
+    uName = cuser;
+}
 
 // Callbacks
 key.oninput = function(event) {
     if (key.value == passwd) {
         document.cookie='key='+passwd;
+        document.cookie='user='+uName;
         key.value = '';
         key.disabled = true;
+        user.value = '';
+        user.disabled = true;
         keyPage.style.visibility = 'hidden';
         connect();
     }
 }
+
+socket.on('message', function(data){
+    //pass
+});
 
 // Rest of the JS
 console.log(room);
