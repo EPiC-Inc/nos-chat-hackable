@@ -93,8 +93,10 @@ key.oninput = function(event) {
 }
 
 socket.on('message', function(data){
-    messages.innerHTML += "<li>"+data+"</li>";
-    messages.scrollTop = messages.height;
+    var message = document.createElement('li');
+    message.innerHTML = data;
+    messages.appendChild(message);
+    messages.scrollTop = message.height; 
 });
 
 // Rest of the JS
