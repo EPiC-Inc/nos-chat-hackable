@@ -40,7 +40,12 @@ io.on('connection', function(socket){
       for (usr in users) {
         io.to(data['room']).emit('message', ['_System', users[usr]]);
       }
-    } else if (false) {
+    } else if (msg == '?ping room') {
+      for (usr in users) {
+        if (users[usr][1] == data['room]) {
+          io.to(data['room']).emit('message', ['_System', users[usr]]);
+        }
+      }
     } else {
     }
     //console.log('data');
