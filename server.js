@@ -21,8 +21,10 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
   console.log('a user connected');
   socket.on('disconnect', function(){
-    io.to(users[socket.id][1]).emit('message', ['_System', 'User ['+users[socket.id][0]+'] has left']);
-    delete users[socket.id];
+    if (users[socket.id] != undefined) {
+      io.to(users[socket.id][1]).emit('message', ['_System', 'User ['+users[socket.id][0]+'] has left']);
+      delete users[socket.id];
+    }
   });
   socket.on('switch', function(data){
     console.log('user switched');
