@@ -77,6 +77,8 @@ if (cuser !== '') {
     //key.disabled = true;
     //keyPage.style.visibility = 'hidden';
     uName = cuser;
+}
+if (cuser !== '' && ckey == passwd) {
     connect();
 }
 
