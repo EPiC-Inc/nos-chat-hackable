@@ -45,6 +45,10 @@ form button {
   text-align: center;
 }
 
+.overlay input {
+  border-radius: 50%;
+}
+
 #buffer {
   height: 50px;
 }
