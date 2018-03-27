@@ -22,11 +22,11 @@ function getUrlVars() {
 
 function connect() {
     if (room !== undefined) {
-        socket.emit('switch', room);
+        socket.emit('switch', [room, uName]);
     }
     else {
         room = 'lobby'; // Set the default room to 'lobby'
-        socket.emit('switch', room);
+        socket.emit('switch', [room, uName]);
     }
     console.log('connection established - '+uName);
 }
