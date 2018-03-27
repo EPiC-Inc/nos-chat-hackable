@@ -23,9 +23,11 @@ function getUrlVars() {
 function connect() {
     if (room !== undefined) {
         socket.emit('switch', room);
-        console.log('connection established - '+uName);
-        sendMsgBtn.disabled = false;
     }
+    else {
+        room = 'lobby'; // Set the default room to 'lobby'
+    }
+    console.log('connection established - '+uName);
 }
 
 function sendMsg() {
