@@ -3,7 +3,7 @@ var socket = io();
 var key = document.getElementById("passkey");
 var keyPage = document.getElementById("keyPage");
 var passwd = 'ocelot';
-var room = getUrlVars()['room']
+var room = getUrlVars()['room'];
 
 // Functions
 function getUrlVars() {
