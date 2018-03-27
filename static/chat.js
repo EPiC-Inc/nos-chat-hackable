@@ -96,7 +96,7 @@ socket.on('message', function(data){
     var message = document.createElement('li');
     message.innerHTML = data;
     messages.appendChild(message);
-    messages.scrollTop = message.height; 
+    document.getElementById("buffer").scrollTop = message.height; 
 });
 
 // Rest of the JS
