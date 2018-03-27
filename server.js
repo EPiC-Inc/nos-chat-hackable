@@ -34,7 +34,8 @@ io.on('connection', function(socket){
     //console.log(users);
   });
   socket.on('message', function(data) {
-    if (data['data'][1] == '?ping') {
+    var msg = data['data'][1];
+    if (msg == '?ping') {
       for (usr in users) {
         io.to(data['room']).emit('message', ['_System', users[usr]]);
       }
