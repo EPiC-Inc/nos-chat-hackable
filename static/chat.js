@@ -84,6 +84,9 @@ if (cuser !== '') {
 key.oninput = function(event) {
     if (key.value == passwd) {
         uName = user.value;
+        if (uName == '_System') {
+            uName = 'I tried to hack the system. Sorry.'
+        }
         document.cookie='key='+passwd;
         document.cookie='user='+uName;
         key.value = '';
