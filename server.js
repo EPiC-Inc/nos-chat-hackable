@@ -4,6 +4,8 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var url = require('url'); 
 
+var cmdHelp = "?ping : see online users<br>ping room : see users in your current room"
+
 var users = {};
 
 if (process.argv[2] == undefined) {
@@ -46,6 +48,8 @@ io.on('connection', function(socket){
           io.to(data['room']).emit('message', ['_System', users[usr]]);
         }
       }
+    } else if (msg == '?help' {
+      io.to(data['room']).emit('message', ['_System', cmdHelp]);
     } else {
     }
     //console.log('data');
