@@ -54,10 +54,10 @@ form button {
   height: 400px;
 }
 
-#messages li {
+#messages div {
   padding: 5px 10px;
 }
 
-#messages li:nth-child(odd) {
+#messages div:nth-child(odd) {
   background: #eee;
 }
