@@ -14,13 +14,13 @@ function getUrlVars() {
 }
 
 // Callbacks
-//key.oninput = function(event) {
-//    if (key.value == passwd) {
-//        key.value = '';
-//        key.disabled = true;
-//        keyPage.style.visibility = 'hidden';
-//    }
-//}
+key.oninput = function(event) {
+    if (key.value == passwd) {
+        key.value = '';
+        key.disabled = true;
+        keyPage.style.visibility = 'hidden';
+    }
+}
 
 room = getUrlVars()['room']
 console.log(room);
