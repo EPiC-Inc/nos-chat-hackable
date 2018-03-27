@@ -25,8 +25,10 @@ function connect() {
 }
 
 function sendMsg() {
-    socket.emit('message', {'room':room, 'data':m.value});
-    m.value=''; // Reset chat bar
+    if (room !== undefined) {
+        socket.emit('message', {'room':room, 'data':m.value});
+        m.value=''; // Reset chat bar
+    }
 }
 
 $(function () {
