@@ -31,6 +31,27 @@ function sendMsg() {
     }
 }
 
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+var ckey=getCookie("key");
+if (ckey == passwd) {
+    alert("Welcome back");
+}
+
 $(function () {
     $('form').submit(function(){
         sendMsg();
@@ -41,6 +62,7 @@ $(function () {
 // Callbacks
 key.oninput = function(event) {
     if (key.value == passwd) {
+        document.cookie='key='+passwd;
         key.value = '';
         key.disabled = true;
         keyPage.style.visibility = 'hidden';
