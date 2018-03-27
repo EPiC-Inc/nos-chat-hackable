@@ -42,7 +42,7 @@ io.on('connection', function(socket){
       }
     } else if (msg == '?ping room') {
       for (usr in users) {
-        if (users[usr][1] == data['room]) {
+        if (users[usr][1] == data['room']) {
           io.to(data['room']).emit('message', ['_System', users[usr]]);
         }
       }
