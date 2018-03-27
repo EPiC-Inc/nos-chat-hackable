@@ -64,7 +64,7 @@ if (ckey == passwd) {
     key.value = '';
     key.disabled = true;
     keyPage.style.visibility = 'hidden';
-    connect();
+    //connect();
 }
 var cuser=getCookie("user");
 if (cuser !== '') {
@@ -72,8 +72,8 @@ if (cuser !== '') {
     //key.value = '';
     //key.disabled = true;
     //keyPage.style.visibility = 'hidden';
-    //connect();
     uName = cuser;
+    connect();
 }
 
 // Callbacks
