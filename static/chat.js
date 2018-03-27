@@ -32,7 +32,7 @@ function connect() {
 }
 
 function sendMsg() {
-    if (room !== undefined) {
+    if (room !== undefined && m.value !== '') {
         socket.emit('message', {'room':room, 'data':[uName, m.value]});
         m.value=''; // Reset chat bar
     }
