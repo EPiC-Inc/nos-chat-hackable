@@ -9,7 +9,7 @@ var users = {};
 if (process.argv[2] == undefined) {
   var port = 80;
 } else {
-  var port = process.argv[2]; // Use node server.js <port>
+  var port = process.argv[2]; // Use node server.js [port]
 }
 
 // Routing
@@ -34,7 +34,14 @@ io.on('connection', function(socket){
     //console.log(users);
   });
   socket.on('message', function(data) {
-    io.to(data['room']).emit('message', data['data']);
+    if (data['data'] == '?ping') {
+      for (usr in users) {
+        io.to(data['room']).emit('message', ['_System', users[usr]]);
+      }
+    } else if () {
+    } else {
+      io.to(data['room']).emit('message', data['data']);
+    }
     //console.log('data');
   });
 });
