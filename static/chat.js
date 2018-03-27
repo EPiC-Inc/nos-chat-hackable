@@ -4,6 +4,7 @@ var key = document.getElementById("passkey"); // Passkey input
 var user = document.getElementById("user"); // User input
 var keyPage = document.getElementById("keyPage"); // Div holding the key elements
 var m = document.getElementById("m"); // Message input
+var messages = document.getElementById("messages"); // Messages
 var sendMsgBtn = document.getElementById("sendMsg");
 var passwd = 'ocelot';
 var room = getUrlVars()['room'];
@@ -92,7 +93,7 @@ key.oninput = function(event) {
 }
 
 socket.on('message', function(data){
-    console.log(data);
+    messages.innerHTML += "<li>"+data+"</li>";
 });
 
 // Rest of the JS
