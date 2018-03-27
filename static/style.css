@@ -49,12 +49,16 @@ form button {
 }
 
 #messages {
-  list-style-type: none; margin: 0; padding: 0;
+  list-style-type: none;
+  background: black;
+  margin: 0;
+  padding: 0;
   overflow-y: scroll;
 }
 
 #messages div {
   padding: 5px 10px;
+  color: darkgrey;
 }
 
 #messages div:nth-child(odd) {
