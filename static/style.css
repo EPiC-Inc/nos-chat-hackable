@@ -46,12 +46,12 @@ form button {
 
 #buffer {
   overflow-y: scroll;
-  height: 90%;
 }
 
 #messages {
   list-style-type: none; margin: 0; padding: 0;
   overflow-y: scroll;
+  height: 400px;
 }
 
 #messages li {
