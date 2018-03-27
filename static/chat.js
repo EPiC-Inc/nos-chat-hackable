@@ -15,7 +15,10 @@ function getUrlVars() {
 }
 
 function connect() {
-    io.sockets.emit('switch', room);
+    if (room !== undefined) {
+        io.sockets.emit('switch', room);
+        console.log('connection established');
+    }
 }
 
 // Callbacks
@@ -30,7 +33,3 @@ key.oninput = function(event) {
 
 // Rest of the JS
 console.log(room);
-
-if (room !== undefined) {
-    console.log('connection established');
-}
