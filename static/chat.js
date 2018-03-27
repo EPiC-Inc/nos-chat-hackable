@@ -6,7 +6,7 @@ var keyPage = document.getElementById("keyPage"); // Div holding the key element
 var m = document.getElementById("m"); // Message input
 var messages = document.getElementById("messages"); // Messages
 var sendMsgBtn = document.getElementById("sendMsg");
-var passwd = 'ocelot';
+var passwd = 'overkill';
 var room = getUrlVars()['room'];
 
 var uName = '';
