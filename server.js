@@ -48,7 +48,7 @@ io.on('connection', function(socket){
           io.to(data['room']).emit('message', ['_System', users[usr]]);
         }
       }
-    } else if (msg == '?help' {
+    } else if (msg == '?help') {
       io.to(data['room']).emit('message', ['_System', cmdHelp]);
     } else {
     }
