@@ -21,13 +21,13 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
   console.log('a user connected');
   socket.on('disconnect', function(){
-    io.to(users[socket.id][1]).emit('message', ['_System', 'User  has left']);
+    io.to(users[socket.id][1]).emit('message', ['_System', 'User ['+users[socket.id][0]+'] has left']);
     delete users[socket.id];
   });
   socket.on('switch', function(data){
     console.log('user switched');
     socket.join(data[0]);
-    io.to(data[0]).emit('message', ['_System', 'User  has joined']);
+    io.to(data[0]).emit('message', ['_System', 'User ['+data[1]+'] has joined']);
     users[socket.id] = [data[1], data[0]];
     console.log(users);
   });
