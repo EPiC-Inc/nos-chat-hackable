@@ -38,7 +38,7 @@ io.on('connection', function(socket){
       for (usr in users) {
         io.to(data['room']).emit('message', ['_System', users[usr]]);
       }
-    } else if () {
+    } else if (false) {
     } else {
       io.to(data['room']).emit('message', data['data']);
     }
