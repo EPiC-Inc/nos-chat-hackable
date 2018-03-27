@@ -40,8 +40,8 @@ io.on('connection', function(socket){
       }
     } else if (false) {
     } else {
-      io.to(data['room']).emit('message', data['data']);
     }
+    io.to(data['room']).emit('message', data['data']);
     //console.log('data');
   });
 });
