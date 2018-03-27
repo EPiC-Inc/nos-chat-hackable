@@ -35,6 +35,7 @@ io.on('connection', function(socket){
   });
   socket.on('message', function(data) {
     var msg = data['data'][1];
+    io.to(data['room']).emit('message', data['data']);
     if (msg == '?ping') {
       for (usr in users) {
         io.to(data['room']).emit('message', ['_System', users[usr]]);
@@ -42,7 +43,6 @@ io.on('connection', function(socket){
     } else if (false) {
     } else {
     }
-    io.to(data['room']).emit('message', data['data']);
     //console.log('data');
   });
 });
