@@ -96,10 +96,10 @@ key.oninput = function(event) {
 }
 
 socket.on('message', function(data){
-    var message = document.createElement('li');
+    var message = document.createElement('div');
     message.innerHTML = '['+data[0]+'] '+data[1];
     messages.appendChild(message);
-    $("ul").scrollTop($("ul").children().height());
+    $("messages").scrollTop($("messages").children().height());
 });
 
 // Rest of the JS
