@@ -25,6 +25,9 @@ io.on('connection', function(socket){
     console.log('user switched');
     socket.join(data);
   });
+  socket.on('message', function(data) {
+    io.to(data['room']).emit('message', 'data');
+  });
 });
 
 http.listen(port, function(){
