@@ -15,6 +15,9 @@ app.use('/static', express.static(__dirname + '/static'));
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/static/index.html');
 });
+app.get('/static/style.css', function(req, res){
+  res.sendFile(__dirname + '/static/style.css');
+});
 
 io.on('connection', function(socket){
   console.log('a user connected');
