@@ -31,8 +31,7 @@ function sendMsg() {
 
 $(function () {
     $('form').submit(function(){
-        socket.emit('message', {'room':room, 'data':$('#m').val()});
-        $('#m').val('');
+        sendMsg();
         return false;
     });
 });
