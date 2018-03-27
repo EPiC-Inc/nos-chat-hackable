@@ -23,7 +23,7 @@ function connect() {
 }
 
 function sendMsg() {
-    socket.emit('message', {'room':room, 'data':m.value);
+    socket.emit('message', {'room':room, 'data':m.value});
 }
 
 // Callbacks
