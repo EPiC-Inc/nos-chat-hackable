@@ -3,6 +3,7 @@ var socket = io();
 var key = document.getElementById("passkey"); // Passkey input
 var keyPage = document.getElementById("keyPage"); // Div holding the key elements
 var m = document.getElementById("m"); // Message input
+var sendMsgBtn = document.getElementById("sendMsg");
 var passwd = 'ocelot';
 var room = getUrlVars()['room'];
 
@@ -19,11 +20,13 @@ function connect() {
     if (room !== undefined) {
         socket.emit('switch', room);
         console.log('connection established');
+        sendMsgBtn.disabled = false;
     }
 }
 
 function sendMsg() {
     socket.emit('message', {'room':room, 'data':m.value});
+    m.value=''; // Reset chat bar
 }
 
 // Callbacks
