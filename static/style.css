@@ -46,7 +46,9 @@ form button {
 }
 
 .overlay input {
-  border-radius: 50%;
+  border-radius: 15%;
+  height: 20px;
+  width: 100px;
 }
 
 #buffer {
