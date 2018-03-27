@@ -44,9 +44,12 @@ form button {
   text-align: center;
 }
 
+.buffer {
+  overflow-y: scroll;
+}
+
 #messages {
   list-style-type: none; margin: 0; padding: 0;
-  overflow-y: scroll;
 }
 
 #messages li {
