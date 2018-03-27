@@ -21,20 +21,14 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
   console.log('a user connected');
   socket.on('disconnect', function(){
-    var rooms = io.sockets.manager.roomClients[socket.id];
-    for (var room in rooms) {
-      if (room.length > 0) { // if not the global room ''
-          room = room.substr(1); // remove leading '/'
-          server.sockets.in(room).emit('User ['+users[socket.id]+'] has left');
-      }
-    }
+    io.to(users[socket.id][1]).emit('User ['+users[socket.id][0]+'] has left');
     delete users[socket.id];
   });
   socket.on('switch', function(data){
     console.log('user switched');
     socket.join(data[0]);
     io.to(data[0]).emit('message', 'User ['+data[1]+'] has joined')
-    users[socket.id] = data[1];
+    users[socket.id] = [data[1], data[0]];
   });
   socket.on('message', function(data) {
     io.to(data['room']).emit('message', data['data']);
