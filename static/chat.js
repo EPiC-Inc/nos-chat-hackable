@@ -1,5 +1,3 @@
-var socket = io();
-
 function getUrlVars() {
     var vars = {};
     var parts = window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -8,4 +6,10 @@ function getUrlVars() {
     return vars;
 }
 
-console.log(getUrlVars()['room']);
+room = getUrlVars()['room']
+console.log(rooms);
+
+if (room !== undefined) {
+    var socket = io.of('/'+room);
+    console.log('connected');
+}
