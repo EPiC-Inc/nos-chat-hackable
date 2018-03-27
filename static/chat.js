@@ -33,7 +33,7 @@ function connect() {
 
 function sendMsg() {
     if (room !== undefined) {
-        socket.emit('message', {'room':room, 'data':'['+uname+'] :'+m.value});
+        socket.emit('message', {'room':room, 'data':'['+uName+'] :'+m.value});
         m.value=''; // Reset chat bar
     }
 }
