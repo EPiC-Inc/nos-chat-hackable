@@ -44,8 +44,9 @@ form button {
   text-align: center;
 }
 
-.buffer {
+#buffer {
   overflow-y: scroll;
+  height: 90%;
 }
 
 #messages {
