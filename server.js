@@ -26,7 +26,8 @@ io.on('connection', function(socket){
     socket.join(data);
   });
   socket.on('message', function(data) {
-    io.to(data['room']).emit('message', 'data');
+    io.to(data['room']).emit('message', data['data']);
+    console.log('data');
   });
 });
 
