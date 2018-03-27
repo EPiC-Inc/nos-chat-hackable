@@ -26,6 +26,7 @@ function connect() {
     }
     else {
         room = 'lobby'; // Set the default room to 'lobby'
+        socket.emit('switch', room);
     }
     console.log('connection established - '+uName);
 }
