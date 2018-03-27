@@ -16,7 +16,7 @@ function getUrlVars() {
 
 function connect() {
     if (room !== undefined) {
-        io.sockets.emit('switch', room);
+        socket.emit('switch', room);
         console.log('connection established');
     }
 }
