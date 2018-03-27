@@ -18,7 +18,6 @@ res.sendFile(__dirname + '/static/index.html');
 
 io.on('connection', function(socket){
   console.log('a user connected');
-  console.log(socket.handshake.url);
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });
