@@ -97,4 +97,4 @@ socket.on('message', function(data){
 });
 
 // Rest of the JS
-console.log(room);
+console.log("Room: "+room);
