@@ -54,7 +54,6 @@ form button {
   background: black;
   margin: 0;
   padding: 0;
-  overflow-y: scroll;
 }
 
 #messages div {
