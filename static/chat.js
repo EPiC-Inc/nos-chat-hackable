@@ -92,7 +92,7 @@ key.oninput = function(event) {
 }
 
 socket.on('message', function(data){
-    //pass
+    console.log(data);
 });
 
 // Rest of the JS
