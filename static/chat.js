@@ -94,6 +94,7 @@ key.oninput = function(event) {
 
 socket.on('message', function(data){
     messages.innerHTML += "<li>"+data+"</li>";
+    $("ul").scrollTop($("ul").children().height());
 });
 
 // Rest of the JS
