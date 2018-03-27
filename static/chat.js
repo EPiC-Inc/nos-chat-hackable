@@ -47,17 +47,22 @@ function getCookie(cname) {
     return "";
 }
 
-var ckey=getCookie("key");
-if (ckey == passwd) {
-    alert("Welcome back");
-}
-
 $(function () {
     $('form').submit(function(){
         sendMsg();
         return false;
     });
 });
+
+// On load
+var ckey=getCookie("key");
+if (ckey == passwd) {
+    //alert("Welcome back");
+    key.value = '';
+    key.disabled = true;
+    keyPage.style.visibility = 'hidden';
+    connect();
+}
 
 // Callbacks
 key.oninput = function(event) {
