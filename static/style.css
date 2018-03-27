@@ -45,7 +45,7 @@ form button {
 }
 
 #buffer {
-  overflow-y: scroll;
+  height: 50px;
 }
 
 #messages {
