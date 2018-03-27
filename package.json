@@ -4,7 +4,7 @@
   "description": "A web-based chat client",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js",
+    "test": "node server.js 8080",
     "start": "node server.js"
   },
   "repository": {
