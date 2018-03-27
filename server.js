@@ -4,7 +4,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var url = require('url'); 
 
-var cmdHelp = "?ping : see online users<br>ping room : see users in your current room"
+var cmdHelp = "?ping : see online users<br>?ping room : see users in your current room"
 
 var users = {};
 
