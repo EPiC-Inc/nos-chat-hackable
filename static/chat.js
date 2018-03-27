@@ -99,7 +99,7 @@ socket.on('message', function(data){
     var message = document.createElement('div');
     message.innerHTML = '['+data[0]+'] '+data[1];
     messages.appendChild(message);
-    $("messages").scrollTop($("messages").children().height());
+    window.scrollTo(0,document.body.scrollHeight);
 });
 
 // Rest of the JS
