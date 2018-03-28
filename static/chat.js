@@ -101,10 +101,14 @@ key.oninput = function(event) {
 }
 
 socket.on('message', function(data){
-    var message = document.createElement('div');
-    message.innerHTML = '['+data[0]+'] '+data[1];
-    messages.appendChild(message);
-    window.scrollTo(0,document.body.scrollHeight);
+    if (data[1] == '?kick '+uName) {
+        socket.disconnect();
+    } else {
+        var message = document.createElement('div');
+        message.innerHTML = '['+data[0]+'] '+data[1];
+        messages.appendChild(message);
+        window.scrollTo(0,document.body.scrollHeight);
+    }
 });
 
 // Rest of the JS
