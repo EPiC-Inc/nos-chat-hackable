@@ -83,7 +83,7 @@ if (cuser !== '' && ckey == passwd) {
 }
 
 // Callbacks
-key.oninput = function(event) {
+function login() {
     if (key.value == passwd) {
         uName = user.value;
         if (uName == '_System') {
