@@ -137,7 +137,7 @@ vis(function(){
 // Callbacks
 socket.on('message', function(data){
     var message = document.createElement('div');
-    if ('@'+uName in data[1]) {
+    if (data[1].includes('@'+uName)) {
         changeIco('/static/alert.png');
     }
     message.innerHTML = '['+data[0]+'] '+data[1];
