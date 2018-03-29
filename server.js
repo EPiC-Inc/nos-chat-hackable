@@ -21,7 +21,7 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-  console.log('a user connected');
+  //console.log('a user connected');
   socket.on('disconnect', function(){
     if (users[socket.id] != undefined) {
       io.to(users[socket.id][1]).emit('message', ['_System', 'User ['+users[socket.id][0]+'] has left']);
@@ -29,7 +29,7 @@ io.on('connection', function(socket){
     }
   });
   socket.on('switch', function(data){
-    console.log('user switched');
+    console.log('user switched : '+data[1]+' to room '+data[0]);
     socket.join(data[0]);
     io.to(data[0]).emit('message', ['_System', 'User ['+data[1]+'] has joined']);
     users[socket.id] = [data[1], data[0]];
