@@ -131,14 +131,14 @@ if (cuser !== '' && ckey == passwd) {
 
 //TEMP
 vis(function(){
-  changeIco(vis() ? '/static/favicon.png' : '/static/alert.png');
+    //changeIco(vis() ? '/static/favicon.png' : '/static/alert.png');
 });
 
 // Callbacks
 socket.on('message', function(data){
     var message = document.createElement('div');
     if (data[1].includes('@'+uName)) {
-        changeIco('/static/alert.png');
+        if (!vis()) {changeIco('/static/alert.png');}
     }
     message.innerHTML = '['+data[0]+'] '+data[1];
     messages.appendChild(message);
