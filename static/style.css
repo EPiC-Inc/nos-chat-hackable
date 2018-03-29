@@ -52,7 +52,8 @@ form button {
 }
 
 #login {
-  position: absolute;
+  background: #33ccff;
+  position: relative;
 }
 
 #buffer {
