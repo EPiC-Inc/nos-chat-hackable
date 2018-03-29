@@ -140,7 +140,7 @@ socket.on('message', function(data){
     var message = '';
     if (data[1].includes('@'+uName)) {
         if (!vis()) {changeIco('/static/alert.png');}
-        message.innerHTML = '<div class="alert"> ['+data[0]+'] '+data[1]+'</div>;
+        message.innerHTML = '<div class="alert"> ['+data[0]+'] '+data[1]+'</div>';
     } else {
         message.innerHTML = '<div>['+data[0]+'] '+data[1]+'</div>';
     }
