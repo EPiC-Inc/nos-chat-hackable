@@ -80,3 +80,7 @@ form button {
 #messages div:nth-child(odd) {
   background: #303030;
 }
+
+.alert {
+  background #ff9900;
+}
