@@ -131,6 +131,7 @@ if (cuser !== '' && ckey == passwd) {
 
 //TEMP
 vis(function(){
+    if (vis()) {changeIco('/static/favicon.png');}
     //changeIco(vis() ? '/static/favicon.png' : '/static/alert.png');
 });
 
