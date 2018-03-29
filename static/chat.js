@@ -12,6 +12,15 @@ var room = getUrlVars()['room'];
 var uName = '';
 
 // Functions
+//Change favicon
+function changeIco(ref) {
+    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = ref;
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+
 // See if the page is visible (for favicon changing)
 var vis = (function(){
     var stateKey, eventKey, keys = {
@@ -123,7 +132,7 @@ if (cuser !== '' && ckey == passwd) {
 //TEMP
 
 vis(function(){
-  document.title = vis() ? 'Visible' : 'Not visible';
+  changeIco(vis() ? '/static/favicon.png' : '/static/alert.png');
 });
 
 // Callbacks
