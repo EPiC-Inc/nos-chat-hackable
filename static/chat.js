@@ -12,6 +12,26 @@ var room = getUrlVars()['room'];
 var uName = '';
 
 // Functions
+// See if the page is visible (for favicon changing)
+var vis = (function(){
+    var stateKey, eventKey, keys = {
+        hidden: "visibilitychange",
+        webkitHidden: "webkitvisibilitychange",
+        mozHidden: "mozvisibilitychange",
+        msHidden: "msvisibilitychange"
+    };
+    for (stateKey in keys) {
+        if (stateKey in document) {
+            eventKey = keys[stateKey];
+            break;
+        }
+    }
+    return function(c) {
+        if (c) document.addEventListener(eventKey, c);
+        return !document[stateKey];
+    }
+})();
+
 function getUrlVars() {
     var vars = {};
     var parts = window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -54,6 +74,24 @@ function getCookie(cname) {
     return "";
 }
 
+function login() {
+    if (key.value == passwd) {
+        uName = user.value.substring(0, 21);
+        if (uName == '_System') {
+            uName = 'I tried to hack the system. Sorry.'
+        }
+        document.cookie='key='+passwd;
+        document.cookie='user='+uName;
+        key.value = '';
+        key.disabled = true;
+        user.value = '';
+        user.disabled = true;
+        keyPage.style.visibility = 'hidden';
+        connect();
+    }
+}
+
+// Jquery
 $(function () {
     $('form').submit(function(){
         sendMsg();
@@ -82,24 +120,13 @@ if (cuser !== '' && ckey == passwd) {
     connect();
 }
 
-// Callbacks
-function login() {
-    if (key.value == passwd) {
-        uName = user.value.substring(0, 21);
-        if (uName == '_System') {
-            uName = 'I tried to hack the system. Sorry.'
-        }
-        document.cookie='key='+passwd;
-        document.cookie='user='+uName;
-        key.value = '';
-        key.disabled = true;
-        user.value = '';
-        user.disabled = true;
-        keyPage.style.visibility = 'hidden';
-        connect();
-    }
-}
+//TEMP
 
+vis(function(){
+  document.title = vis() ? 'Visible' : 'Not visible';
+});
+
+// Callbacks
 socket.on('message', function(data){
     var message = document.createElement('div');
     message.innerHTML = '['+data[0]+'] '+data[1];
