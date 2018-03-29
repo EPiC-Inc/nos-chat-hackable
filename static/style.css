@@ -56,6 +56,11 @@ form button {
   position: relative;
 }
 
+#login button {
+  width: 10%; background: rgb(130, 224, 255); border: none; padding: 10px;
+  font-weight: bold;
+}
+
 #buffer {
   height: 50px;
 }
