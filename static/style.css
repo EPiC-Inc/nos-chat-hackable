@@ -11,7 +11,7 @@ body {
 }
 
 form {
-  padding: 3px; position: fixed; bottom: 0; width: 100%;
+  background: black; padding: 3px; position: fixed; bottom: 0; width: 100%;
 }
 
 form input {
@@ -49,6 +49,10 @@ form button {
   border-radius: 10px;
   height: 30px;
   width: 300px;
+}
+
+#login {
+  position: absolute;
 }
 
 #buffer {
