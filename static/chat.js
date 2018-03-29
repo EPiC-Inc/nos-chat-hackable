@@ -130,7 +130,6 @@ if (cuser !== '' && ckey == passwd) {
 }
 
 //TEMP
-
 vis(function(){
   changeIco(vis() ? '/static/favicon.png' : '/static/alert.png');
 });
@@ -138,6 +137,9 @@ vis(function(){
 // Callbacks
 socket.on('message', function(data){
     var message = document.createElement('div');
+    if ('@'+uName in data[1]) {
+        changeIco('/static/alert.png');
+    }
     message.innerHTML = '['+data[0]+'] '+data[1];
     messages.appendChild(message);
     window.scrollTo(0,document.body.scrollHeight);
