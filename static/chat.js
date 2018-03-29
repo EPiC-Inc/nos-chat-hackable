@@ -87,7 +87,7 @@ function login() {
     if (key.value == passwd) {
         uName = user.value.substring(0, 21);
         if (uName == '_System') {
-            uName = 'I tried to hack the system. Sorry.'
+            uName = 'I_tried_to_hack_the_system._Sorry.'
         }
         document.cookie='key='+passwd;
         document.cookie='user='+uName;
@@ -137,12 +137,14 @@ vis(function(){
 
 // Callbacks
 socket.on('message', function(data){
-    var message = document.createElement('div');
+    var message = '';
     if (data[1].includes('@'+uName)) {
         if (!vis()) {changeIco('/static/alert.png');}
+        message.innerHTML = '<div class="alert"> ['+data[0]+'] '+data[1]+'</div>;
+    } else {
+        message.innerHTML = '<div>['+data[0]+'] '+data[1]+'</div>';
     }
-    message.innerHTML = '['+data[0]+'] '+data[1];
-    messages.appendChild(message);
+    messages.innerHTML += message;
     window.scrollTo(0,document.body.scrollHeight);
 });
 
