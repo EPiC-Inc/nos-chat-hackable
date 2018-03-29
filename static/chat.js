@@ -33,7 +33,7 @@ function connect() {
 
 function sendMsg() {
     if (room !== undefined && m.value !== '') {
-        socket.emit('message', {'room':room, 'data':[uName, m.value]});
+        socket.emit('message', {'room':room, 'data':[uName, m.value.substring(0, 401)]});
         m.value=''; // Reset chat bar
     }
 }
@@ -85,7 +85,7 @@ if (cuser !== '' && ckey == passwd) {
 // Callbacks
 function login() {
     if (key.value == passwd) {
-        uName = user.value;
+        uName = user.value.substring(0, 21);
         if (uName == '_System') {
             uName = 'I tried to hack the system. Sorry.'
         }
