@@ -1,5 +1,4 @@
-# nos-chat
-The next generation of web chat clients (not really, lol)
+# NOW HACKABLE =(
 
 # Requirements
 * Node.js
