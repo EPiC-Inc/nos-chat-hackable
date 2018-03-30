@@ -29,10 +29,12 @@ io.on('connection', function(socket){
     }
   });
   socket.on('switch', function(data){
-    console.log('user switched : '+data[1]+' to room '+data[0]);
-    socket.join(data[0]);
-    io.to(data[0]).emit('message', ['_System', 'User ['+data[1]+'] has joined']);
-    users[socket.id] = [data[1], data[0]];
+    if (data[1] !== '') {
+      console.log('user switched : '+data[1]+' to room '+data[0]);
+      socket.join(data[0]);
+      io.to(data[0]).emit('message', ['_System', 'User ['+data[1]+'] has joined']);
+      users[socket.id] = [data[1], data[0]];
+    }
     //console.log(users);
   });
   socket.on('message', function(data) {
