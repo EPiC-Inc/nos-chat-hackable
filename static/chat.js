@@ -6,7 +6,7 @@ var keyPage = document.getElementById("keyPage"); // Div holding the key element
 var m = document.getElementById("m"); // Message input
 var messages = document.getElementById("messages"); // Messages
 var sendMsgBtn = document.getElementById("sendMsg");
-var passwd = 'overkill';
+var passwd = 529788466;
 var room = getUrlVars()['room'];
 
 var uName = '';
@@ -83,8 +83,19 @@ function getCookie(cname) {
     return "";
 }
 
+hashCode = function(str){
+    var hash = 0;
+    if (str.length == 0) return hash;
+    for (i = 0; i < str.length; i++) {
+        char = str.charCodeAt(i);
+        hash = ((hash<<5)-hash)+char;
+        hash = hash & hash; // Convert to 32bit integer
+    }
+    return hash;
+}
+
 function login() {
-    if (key.value == passwd) {
+    if (hashCode(key.value) == passwd) {
         uName = user.value.substring(0, 21);
         if (uName == '_System') {
             uName = 'I_tried_to_hack_the_system._Sorry.'
