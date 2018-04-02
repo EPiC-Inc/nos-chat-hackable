@@ -15,9 +15,9 @@
 
 [port] is optional, defaults to 80
 
-> `npm test` to quickly start on port 8080
+`npm test` to quickly start on port 8080
 
-> `npm start` starts it on port 80
+`npm start` starts it on port 80
 
 # Updating
 > `git pull origin master`
