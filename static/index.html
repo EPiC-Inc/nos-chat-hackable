@@ -4,7 +4,6 @@
     <title>Novus Ordo Seclorum</title>
     <link rel="shortcut icon" type="image/png" href="/static/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   </head>
 
@@ -14,14 +13,10 @@
       <h2>New Order of the Ages</h2><br />
       <h2>Choose a room to begin</h2><br />
       <a href='/static/coms.html'><button>Head to Lobby</button></a>
-    </div></div>
-
-    <form onsubmit="return false">
-      <input id="m" autocomplete="off" /><button id='sendMsg'>Send</button>
-    </form>
-
-    <div id='messages'>
-    </div>
-    <div id='buffer'></div>
+      <h2> -- Or -- </h2>
+      <form onsubmit="return false">
+        Room Name: <input id='roomName'></input><br><br>
+        <button onclick='join()'>Join Room</button>
+      </form>
   </body>
 </html>
