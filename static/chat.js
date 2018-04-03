@@ -96,7 +96,7 @@ hashCode = function(str){
 
 function login() {
     if (hashCode(key.value) == passwd && user.value.length > 0) {
-        uName = user.value.substring(0, 21);
+        uName = user.value.substring(0, 51);
         if (uName == '_System') {
             uName = 'I_tried_to_hack_the_system._Sorry.'
         }
