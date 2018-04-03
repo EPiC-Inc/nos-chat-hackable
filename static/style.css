@@ -10,6 +10,11 @@ a {
   color: #00ccff;
 }
 
+button {
+  background: rgb(130, 224, 255); border: none; padding: 10px;
+  font-weight: bold;
+}
+
 a:hover {
   color: #000066;
   background: #00ccff;
