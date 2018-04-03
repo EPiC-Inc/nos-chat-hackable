@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Novus Ordo Seclorum</title>
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  </head>
+
+  <body>
+    <div class='overlay' id='keyPage'><div id='keyContent'>
+      <h1>Novus Ordo Seclorum</h1>
+      <h2>New Order of the Ages</h2><br />
+      <h2>Choose a room to begin</h2><br />
+      <form id='login'>
+        Username: <input id='user'></input><br><br>
+        Password: <input type='password' id='passkey'></input><br><br>
+        <button onclick='login()'>Log In</button>
+      </form>
+    </div></div>
+
+    <form onsubmit="return false">
+      <input id="m" autocomplete="off" /><button id='sendMsg'>Send</button>
+    </form>
+
+    <div id='messages'>
+    </div>
+    <div id='buffer'></div>
+  </body>
+  <script src="/static/chat.js"></script>
+</html>
