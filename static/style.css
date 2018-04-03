@@ -5,6 +5,16 @@
   font-family: monospace;
 }
 
+a {
+  transition-duration: 0.4s;
+  color: #00ccff;
+}
+
+a:hover {
+  color: #336699;
+  background: #00ccff;
+}
+
 body {
   font: 13px Helvetica, Arial;
   background: black;
